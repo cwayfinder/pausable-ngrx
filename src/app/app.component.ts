@@ -12,10 +12,10 @@ import { BackendService } from './backend.service';
 })
 export class AppComponent implements OnInit {
 
-  private x$: Observable<number>;
-  private y$: Observable<number>;
-  private color$: Observable<string>;
-  private size$: Observable<number>;
+  x$: Observable<number>;
+  y$: Observable<number>;
+  color$: Observable<string>;
+  size$: Observable<number>;
 
   constructor(private store: Store<AppState>, private backend: BackendService) {}
 
