@@ -1,0 +1,17 @@
+:host {
+  display: block;
+  height: 100%;
+}
+
+.dot {
+  border-radius: 50%;
+  position: absolute;
+
+  $moveTime: 500ms;
+  $sizeChangeTime: 400ms;
+  $colorChangeTime: 900ms;
+  transition:
+    top $moveTime, left $moveTime,
+    background-color $colorChangeTime,
+    width $sizeChangeTime, height $sizeChangeTime;
+}
