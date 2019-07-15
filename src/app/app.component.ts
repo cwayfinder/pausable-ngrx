@@ -4,6 +4,7 @@ import { AppState } from './state/reducers';
 import { Observable } from 'rxjs';
 import { changeColor, changeSize, move } from './state/actions';
 import { BackendService } from './backend.service';
+import { PausableActionsSubject } from './state/pausable-actions-subject';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   color$: Observable<string>;
   size$: Observable<number>;
 
-  constructor(private store: Store<AppState>, private backend: BackendService) {}
+  constructor(private store: Store<AppState>, private backend: BackendService, private actions: PausableActionsSubject) {}
 
   ngOnInit(): void {
     this.x$ = this.store.select('dot', 'position', 'x');
@@ -38,10 +39,10 @@ export class AppComponent implements OnInit {
   }
 
   transitionStart() {
-    // TODO: pause NgRx actions stream
+    this.actions.pause(); // pause NgRx actions stream
   }
 
   transitionEnd() {
-    // TODO: resume NgRx actions stream
+    this.actions.resume(); // resume NgRx actions stream
   }
 }

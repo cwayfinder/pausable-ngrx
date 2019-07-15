@@ -3,15 +3,15 @@
   height: 100%;
 }
 
-.dot {
-  border-radius: 50%;
-  position: absolute;
+    .dot {
+      border-radius: 50%;
+      position: absolute;
 
-  $moveTime: 500ms;
-  $sizeChangeTime: 400ms;
-  $colorChangeTime: 900ms;
-  transition:
-    top $moveTime, left $moveTime,
-    background-color $colorChangeTime,
-    width $sizeChangeTime, height $sizeChangeTime;
-}
+      $moveTime: 3000ms;
+      $sizeChangeTime: 2000ms;
+      $colorChangeTime: 1000ms;
+      transition:
+        top $moveTime, left $moveTime,
+        background-color $colorChangeTime,
+        width $sizeChangeTime, height $sizeChangeTime;
+    }
